@@ -27,7 +27,7 @@
         <ul class="flex item-center">
             @auth
                 <li>
-                    <a href="" class="p-3">Volodymyr Honcharov</a>
+                    <a href="" class="p-3">{{ Auth::user()->name }}</a>
                 </li>
                 <li>
                     <a href="" class="p-3">Logout</a>
@@ -36,7 +36,7 @@
 
             @guest
                 <li>
-                    <a href="" class="p-3">Login</a>
+                    <a href="{{ route('login') }}" class="p-3">Login</a>
                 </li>
                 <li>
                     <a href="{{ route('register') }}" class="p-3">Register</a>
