@@ -35,6 +35,9 @@
                         <span class="text-gray-600 text-sm">{{ $post->created_at->diffForHumans() }}</span>
                     </div>
                 @endforeach
+                <div>
+                    {{ $posts->links() }}
+                </div>
             @else
                 <p>There are no posts yet</p>
             @endif
