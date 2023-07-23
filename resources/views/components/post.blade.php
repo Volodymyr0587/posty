@@ -4,7 +4,10 @@
     <a href="{{ route('users.posts', $post->user) }}" class="font-bold">{{ $post->user->name }}</a>
 
     <p class="mb-2">
-        <a href="{{ route('posts.show', $post) }}">{{ $post->body }}</a>
+        <a href="{{ route('posts.show', $post) }}">{{ $post->title }}</a>
+    </p>
+    <p class="mb-2">
+        {{ $post->body }}
     </p>
     <span class="text-gray-600 text-sm">{{ $post->created_at->diffForHumans() }}</span>
 
