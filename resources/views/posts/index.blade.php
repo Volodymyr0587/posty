@@ -34,13 +34,13 @@
                         <p class="mb-2">{{ $post->body }}</p>
                         <span class="text-gray-600 text-sm">{{ $post->created_at->diffForHumans() }}</span>
 
-                        <div>
+                        @can('delete', $post)
                             <form action="{{ route('posts.destroy', $post) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="text-red-500">Delete</button>
                             </form>
-                        </div>
+                        @endcan
 
                         <div class="flex items-center">
 
