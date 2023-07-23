@@ -3,7 +3,9 @@
 <div class="mb-4">
     <a href="{{ route('users.posts', $post->user) }}" class="font-bold">{{ $post->user->name }}</a>
 
-    <p class="mb-2">{{ $post->body }}</p>
+    <p class="mb-2">
+        <a href="{{ route('posts.show', $post) }}">{{ $post->body }}</a>
+    </p>
     <span class="text-gray-600 text-sm">{{ $post->created_at->diffForHumans() }}</span>
 
     @can('delete', $post)
