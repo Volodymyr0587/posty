@@ -42,7 +42,8 @@ class PostLiked extends Mailable
     public function content(): Content
     {
         return new Content(
-            markdown: 'emails.posts.liked',
+            view: 'emails.posts.liked',
+            with: ['name' => $this->liker, 'post' => $this->post, 'liker' => auth()->user()->name]
         );
     }
 
