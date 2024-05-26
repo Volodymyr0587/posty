@@ -16,8 +16,9 @@ class PostController extends Controller
         ]);
     }
 
-    public function show(Post $post)
+    public function show($slug)
     {
+        $post = Post::where('slug', $slug)->firstOrFail();
         return view('posts.show', [
             'post' => $post
         ]);
@@ -41,6 +42,6 @@ class PostController extends Controller
 
         $post->delete();
 
-        return back();
+        return to_route('posts');
     }
 }

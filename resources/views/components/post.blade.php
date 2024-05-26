@@ -4,7 +4,7 @@
     <a href="{{ route('users.posts', $post->user) }}" class="font-bold">{{ $post->user->name }}</a>
 
     <p class="mb-2">
-        <a href="{{ route('posts.show', $post) }}">{{ $post->title }}</a>
+        <a href="{{ route('posts.show', $post->slug) }}">{{ $post->title }}</a>
     </p>
     <p class="mb-2">
         {{ $post->body }}
@@ -28,7 +28,7 @@
                     <button type="submit" class="text-blue-500">Like</button>
                 </form>
             @else
-                <form action="{{ route('posts.likes', $post) }}" method="POST" class="mr-1">
+                <form action="{{ route('posts.likes', $post->slug) }}" method="POST" class="mr-1">
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="text-blue-500">Unlike</button>
